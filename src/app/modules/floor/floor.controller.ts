@@ -24,11 +24,11 @@ const getAllFloor: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     const result = await FloorService.getAllFloor();
 
-    sendResponse<IFloor>(res, {
+    sendResponse<IFloor[]>(res, {
       statusCode: httpStatus.OK,
       success: true,
       message: 'Floor get successfully!',
-      data: result,
+      data: result.data,
     });
   }
 );
