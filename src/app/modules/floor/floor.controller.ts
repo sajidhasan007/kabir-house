@@ -20,6 +20,20 @@ const createFloor: RequestHandler = catchAsync(
   }
 );
 
+const getAllFloor: RequestHandler = catchAsync(
+  async (req: Request, res: Response) => {
+    const result = await FloorService.getAllFloor();
+
+    sendResponse<IFloor>(res, {
+      statusCode: httpStatus.OK,
+      success: true,
+      message: 'Floor get successfully!',
+      data: result,
+    });
+  }
+);
+
 export const FloorController = {
   createFloor,
+  getAllFloor,
 };

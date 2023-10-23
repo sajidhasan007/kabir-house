@@ -2,6 +2,7 @@
 import { Model, Types } from 'mongoose';
 
 export type IFloor = {
+  _id?: string;
   title: string;
   totalFloat: number;
   flats?: Types.ObjectId;
